@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9; IE=8; IE=7; IE=EDGE">
+  <!-- 强制页面在当前窗口以独立页面显示 -->
+  <meta HTTP-EQUIV="Window-target" CONTENT="_top">
+  <!-- 浏览器内核控制：强制360等浏览器使用webkit内核 -->
+  <meta name="renderer" content="webkit">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 转码申明：用百度打开网页可能会对其进行转码（比如贴广告），避免转码可添加如下meta -->
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <!-- WebApp全屏模式：伪装app，离线应用。 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+  <meta content="/assets/images/logo.png" itemprop="image">
+  <title>棱角</title> 
+  <meta name="keywords" content="ShadowsocksR|游戏加速|Ps4游戏加速|Xbox游戏加速|mac翻墙|shadowrocket翻墙|免费翻墙">
+  <meta name="description"
+        content="别让生活磨灭你的棱角"/>
+  <meta name="author" content="DaoCloud">
+  <link type="text/plain" rel="author" href="404.html" />
+  <link type="image/x-icon" rel="icon" href="favicon.ico" />
+  <!-- dao env -->
+  <script>
+    window.daoEnv = {};
+        window.daoEnv.DAOCLOUD_ACCOUNT = 'https://www.lengjiao.org/';
+            window.daoEnv.DAOCLOUD_API_URL = 'https://www.lengjiao.org/';
+            window.daoEnv.DAOCLOUD_HUB = 'https://www.lengjiao.org/';
+            window.daoEnv.DAOCLOUD_DASHBOARD = 'https://www.lengjiao.org/';
+            window.daoEnv.DAOVOICE_DASHBOARD = 'https://www.lengjiao.org/';
+            window.daoEnv.DAOCHANNEL_API_URL = 'https://www.lengjiao.org/';
+             window.daoEnv.cdnUrl = 'https://www.lengjiao.org/';
+      </script>
+  <script type="text/javascript" src="assets/js/index.js"></script>
+
+
+</head>
+<body ontouchstart="" onmouseover=""><!-- add attribute ontouchstart onmouseover to allow css hover style in mobile -->
+  <style>
+#outdated{display:none;position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;z-index:9999;background-color:#f25648;color:#fff}#outdated .inner{position:absolute;width:100%;margin:auto;top:50%;left:0;margin-top:-120px}#outdated .outdated-header{font-size:60px;font-weight:100;margin-bottom:5px}#outdated .inner p{font-size:20px;line-height:20px;font-weight:400px;margin-bottom:30px;}#btnUpdateBrowser{display:block;position:relative;padding:10px 20px;margin:30px auto 0;width:400px;color:#fff;font-size:16px;text-decoration:none;border:1px solid #fbfcfc;cursor:pointer;background-color:transparent;}#btnUpdateBrowser:hover{color:#f25648;background-color:#fff}.logo{padding: 30px 90px;text-align:left;position:absolute;top:0;left:0;}.outdated-bg{position:absolute;bottom:0;left:0;}
+</style>
+<div id="outdated">
+  <img class="outdated-bg" id="outdatedBG" alt="">
+  <div class="logo"><img src="assets/images/logo.png" width="128px" alt=""></div>
+  <div class="inner" id="outdatedContent">
+    <div class="outdated-header">构建属于您的私人国际网络加速服务</div>
+    <p>业界领先的视频及游戏加速解决方案<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/zh-cn">点此升级您的浏览器，并重新访问www.lengjiao.org</a></p>
+  </div>
+</div>
+<script>
+var outdatedBrowser=function(options){var outdated=document.getElementById("outdated");var outdatedContent=document.getElementById("outdatedContent");var outdatedBG=document.getElementById("outdatedBG");var outdatedBGWidth=1440;var outdatedBGHeight=900;var winWidth=0;var winHeight=0;var html=document.getElementsByTagName("html")[0];this.defaultOpts={bgColor:"#f25648",color:"#ffffff",lowerThan:"transform",languagePath:""};var bkgColor="";var txtColor="";var cssProp="";var languagePath="";if(options){if(options.lowerThan=="IE8"||options.lowerThan=="borderSpacing"){options.lowerThan="borderSpacing"}else{if(options.lowerThan=="IE9"||options.lowerThan=="boxShadow"){options.lowerThan="boxShadow"}else{if(options.lowerThan=="IE10"||options.lowerThan=="transform"||options.lowerThan==""||typeof options.lowerThan==="undefined"){options.lowerThan="transform"}else{if(options.lowerThan=="IE11"||options.lowerThan=="borderImage"){options.lowerThan="borderImage"}}}}this.defaultOpts.bgColor=options.bgColor;this.defaultOpts.color=options.color;this.defaultOpts.lowerThan=options.lowerThan;this.defaultOpts.languagePath=options.languagePath;bkgColor=this.defaultOpts.bgColor;txtColor=this.defaultOpts.color;cssProp=this.defaultOpts.lowerThan;languagePath=this.defaultOpts.languagePath}else{bkgColor=this.defaultOpts.bgColor;txtColor=this.defaultOpts.color;cssProp=this.defaultOpts.lowerThan;languagePath=this.defaultOpts.languagePath}var done=true;function function_opacity(opacity_value){outdated.style.opacity=opacity_value/100;outdated.style.filter="alpha(opacity="+opacity_value+")"}function function_fade_in(opacity_value){function_opacity(opacity_value);if(opacity_value==1){outdated.style.display="block"}if(opacity_value==100){done=true}}var supports=(function(){var div=document.createElement("div");var vendors="Khtml Ms O Moz Webkit".split(" ");var len=vendors.length;return function(prop){if(prop in div.style){return true}prop=prop.replace(/^[a-z]/,function(val){return val.toUpperCase()});while(len--){if(vendors[len]+prop in div.style){return true}}return false}})();if(!supports(""+cssProp+"")){outdated.style.display="block";outdated.style.opacity="1";html.style.overflow="hidden"}else{return}if(languagePath===" "||languagePath.length==0){startStylesAndEvents()}else{grabFile(languagePath)}function startStylesAndEvents(){outdatedBG.setAttribute("src","images/404.html");updateOutdatedBrowserStyle();var btnUpdate=document.getElementById("btnUpdateBrowser");outdated.style.backgroundColor=bkgColor;outdated.style.color=txtColor;outdatedContent.children[0].style.color=txtColor;outdatedContent.children[1].style.color=txtColor;btnUpdate.style.color=txtColor;if(btnUpdate.style.borderColor){btnUpdate.style.borderColor=txtColor}btnUpdate.onmouseover=function(){this.style.color=bkgColor};btnUpdate.onmouseout=function(){this.style.color=txtColor}}function getWindowSize(){if(window.innerWidth){winWidth=window.innerWidth}else{if((document.body)&&(document.body.clientWidth)){winWidth=document.body.clientWidth}}if(window.innerHeight){winHeight=window.innerHeight}else{if((document.body)&&(document.body.clientHeight)){winHeight=document.body.clientHeight}}if(document.documentElement&&document.documentElement.clientHeight&&document.documentElement.clientWidth){winHeight=document.documentElement.clientHeight;winWidth=document.documentElement.clientWidth}}function updateOutdatedBrowserStyle(){getWindowSize();var outdatedBGCurrWidth=winWidth;var outdatedBGCurrHeight=winHeight;var outdatedBGCurrTop=0;var outdatedBGCurrLeft=0;if(outdatedBGWidth/outdatedBGHeight>winWidth/winHeight){outdatedBGCurrWidth=winWidth/outdatedBGHeight*outdatedBGWidth;outdatedBGCurrLeft=-(outdatedBGCurrWidth-winHeight)/2}else{outdatedBGCurrHeight=winWidth/outdatedBGWidth*outdatedBGHeight;outdatedBGCurrTop=-(outdatedBGCurrHeight-winHeight)/2}outdatedBG.style.width=outdatedBGCurrWidth+"px";outdatedBG.style.height=outdatedBGCurrHeight+"px";outdatedBG.style.left=outdatedBGCurrLeft+"px";outdatedBG.style.top=outdatedBGCurrTop+"px"}var layoutChineseDefault='<div class="inner"><h6>您的浏览器已过时</h6>'+'<p>要正常浏览本网站请升级您的浏览器。 <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/zh-cn/">现在升级</a></p></div>';var layoutEnglish='<div class="inner"><h6>Your browser is out-of-date!</h6>'+'<p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/en/">Update my browser now </a></p></div>';function getHTTPObject(){var xhr=false;if(window.XMLHttpRequest){xhr=new XMLHttpRequest()}else{if(window.ActiveXObject){try{xhr=new ActiveXObject("Msxml2.XMLHTTP")}catch(e){try{xhr=new ActiveXObject("Microsoft.XMLHTTP")}catch(e){xhr=false}}}}return xhr}function grabFile(file){var request=getHTTPObject();if(request){request.onreadystatechange=function(){displayResponse(request)};request.open("404-2.html",file,true);request.send(null)}return false}function displayResponse(request){var insertContentHere=document.getElementById("outdated");if(request.readyState==4){if(request.status==200||request.status==304){insertContentHere.innerHTML=request.responseText}else{insertContentHere.innerHTML=layoutChineseDefault}startStylesAndEvents()}return false}};outdatedBrowser({bgColor:"#25253f",color:"#ffffff",lowerThan:"IE9",languagePath:""});
+</script>
+  <div class="viewport">
+    <div class="container-main">
+      <nav class="pushy pushy-right">
+  <ul class="pushy-menu">
+    <!-- submenu -->
+        
+      
+                  <li class="pushy-link">
+            <a href="index.html">首页</a>
+          </li>
+                
+          
+        
+      
+                  <li class="pushy-submenu">
+            <a>产品介绍</a>
+              <ul>
+                              <li class="pushy-link"><a href="cloud.html">云加速</a></li>
+                              <li class="pushy-link"><a href="game.html">游戏加速</a></li>
+                              <li class="pushy-link"><a href="inc.html">企业专线</a></li>
+                            </ul>
+          </li>
+                
+          
+        
+      
+                  <li class="pushy-link">
+            <a href="pricing.html">定价</a>
+          </li>
+                
+          
+        
+      
+                  <li class="pushy-link">
+            <a href="faq.html">教程</a>
+          </li>
+                
+          
+        
+      
+                  <li class="pushy-link">
+            <a href="terms.html">条款</a>
+          </li>
+                
+
+                  <li class="pushy-submenu">
+            <a>更多</a>
+              <ul>
+                              <li class="pushy-link"><a href="https://www.lengjiao.org/announcements.php">公告信息</a></li>
+                              
+                              <li class="pushy-link"><a href="https://www.lengjiao.org/submitticket.php">提交问题</a></li>
+                              <li class="pushy-link"><a href="team.html">关于我们</a></li>
+
+                            </ul>
+          </li>
+                
+          
+    
+  </ul>
+  <div class="pushy-section">
+    <a href="https://www.lengjiao.org/clientarea.php" class="btn btn-ghost">登录</a>
+    <a href="https://www.lengjiao.org/register.php" class="btn btn-ghost">注册</a>
+  </div>
+  <!--<div class="pushy-section" style="display: none">-->
+    <!--<a href="/en/" class="pushy-link">Switch to English</a>-->
+  <!--</div>-->
+</nav>
+<div class="site-overlay"></div>
+<div id="container">
+  <nav class="navbar navbar-daocloud  ">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="menu-btn navbar-toggle collapsed">
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images/logo.png"/>
+      </a>
+      <a class="navbar-brand navbar-brand-color" href="index.html">
+<img src="assets/images/logo1.png"/>
+              </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+
+      <ul id="signInBar" class="nav navbar-nav navbar-right state-login">
+        <li>
+                      <a class="login-link" href="https://www.lengjiao.org/clientarea.php">登录</a>
+                  </li>
+        <li>
+                      <a href="https://www.lengjiao.org/register.php" class="btn btn-ghost-light">注册</a>
+                  </li>
+      </ul>
+
+      <ul id="userBar" class="nav navbar-nav navbar-right state-login hidden">
+        <li>
+                      <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16">
+  <defs>
+    <mask id="a" x="0" y="8.424" width="16" height="16.312" maskUnits="userSpaceOnUse">
+      <rect y="8.424" width="16" height="8.636" fill="#fff"/>
+    </mask>
+  </defs>
+  <title>profile</title>
+  <path d="M8,1A4,4,0,1,1,4,5,4,4,0,0,1,8,1M8,0a5,5,0,1,0,5,5A5,5,0,0,0,8,0H8Z"/>
+  <g mask="url(#a)">
+    <path d="M11.132,12A3.873,3.873,0,0,1,15,15.868v4a3.873,3.873,0,0,1-3.868,3.868H4.868A3.873,3.873,0,0,1,1,19.868v-4A3.873,3.873,0,0,1,4.868,12h6.263m0-1H4.868A4.883,4.883,0,0,0,0,15.868v4a4.883,4.883,0,0,0,4.868,4.868h6.263A4.883,4.883,0,0,0,16,19.868v-4A4.883,4.883,0,0,0,11.132,11h0Z"/>
+  </g>
+</svg>
+&nbsp;
+              <span></span>
+            </a>
+                  </li>
+      </ul>
+
+      <ul class="nav navbar-nav yamm">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" role="button"
+             aria-haspopup="true">产品<span
+              class="caret"></span></a>
+           <ul class="dropdown-menu product-menu">
+            <li>
+              <div class="media-container">
+              
+                            
+							
+							
+							
+                  <div class="media">
+                  <a href="cloud.html">
+				  				  				 
+                    <div class="media-left">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <title>未标题-1</title>
+  <path d="M29,55a12.992,12.992,0,0,1-4.422-25.212A13,13,0,0,1,36,23l0.055,0a12.982,12.982,0,0,1,23.9,6.16A12.992,12.992,0,0,1,58,55H29Z" fill="#ebf0f9"/>
+  <path d="M23,61a12.992,12.992,0,0,1-4.422-25.212A13,13,0,0,1,30,29l0.055,0a12.982,12.982,0,0,1,23.9,6.16A12.992,12.992,0,0,1,52,61H23Z" fill="#fff"/>
+  <path d="M41,23A12.99,12.99,0,0,1,53.958,35.163,12.992,12.992,0,0,1,52,61H23a12.992,12.992,0,0,1-4.422-25.212A13,13,0,0,1,30,29l0.055,0A12.979,12.979,0,0,1,41,23m0-1.4a14.334,14.334,0,0,0-11.7,6.017A14.4,14.4,0,0,0,17.61,34.66,14.392,14.392,0,0,0,23,62.4H52a14.392,14.392,0,0,0,3.244-28.415A14.42,14.42,0,0,0,41,21.6h0Z" fill="#728dc0"/>
+  <path d="M46,36.426a12.939,12.939,0,0,1,7-2.043,13.138,13.138,0,0,1,1.5.086" fill="#fff"/>
+  <path d="M46.378,37.016l-0.755-1.179a13.76,13.76,0,0,1,8.961-2.063l-0.159,1.391A12.393,12.393,0,0,0,46.378,37.016Z" fill="#728dc0"/>
+  <rect x="15" y="42" width="45" height="14" rx="7" ry="7" fill="#fff"/>
+  <path d="M53,42a7.021,7.021,0,0,1,7,7h0a7.021,7.021,0,0,1-7,7H22a7.021,7.021,0,0,1-7-7h0a7.021,7.021,0,0,1,7-7H53m0-1.4H22a8.4,8.4,0,0,0,0,16.8H53a8.4,8.4,0,0,0,0-16.8h0Z" fill="#728dc0"/>
+  <rect x="43" y="47" width="12" height="4" rx="2" ry="2" fill="#fff"/>
+  <path d="M53,47a2,2,0,0,1,0,4H45a2,2,0,0,1,0-4h8m0-1.4H45a3.4,3.4,0,0,0,0,6.8h8a3.4,3.4,0,0,0,0-6.8h0Z" fill="#728dc0"/>
+  <circle cx="37" cy="49" r="2" fill="#fff"/>
+  <path d="M37,47a2,2,0,1,1-2,2,2,2,0,0,1,2-2m0-1.4A3.4,3.4,0,1,0,40.4,49,3.4,3.4,0,0,0,37,45.6h0Z" fill="#728dc0"/>
+  <circle cx="29" cy="49" r="2" fill="#fff"/>
+  <path d="M29,47a2,2,0,1,1-2,2,2,2,0,0,1,2-2m0-1.4A3.4,3.4,0,1,0,32.4,49,3.4,3.4,0,0,0,29,45.6h0Z" fill="#728dc0"/>
+</svg>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">云加速</h4>
+                      高速云传输
+                    </div>
+                  </a>
+                </div>
+                              
+                            
+                  <div class="media">
+                  <a href="inc.html">
+                    <div class="media-left">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <title>未标题-2</title>
+  <path d="M60,63.285L41.057,52.045,41.031,31.077,58.367,41.33A3.369,3.369,0,0,1,60,44.255v19.03Z" fill="#ebf0f9"/>
+  <polygon points="63 54.214 63 56.182 75 49.287 75 47.318 63 54.214" fill="#ebf0f9"/>
+  <polygon points="63 50.75 75 43.855 75 41.886 63 48.782 63 50.75" fill="#ebf0f9"/>
+  <polygon points="75 38.423 75 36.455 63 43.35 63 45.318 75 38.423" fill="#ebf0f9"/>
+  <path d="M41,96.285L22.057,85.045,22.031,64.077,39.367,74.33A3.369,3.369,0,0,1,41,77.255v19.03Z" fill="#ebf0f9"/>
+  <polygon points="44 87.214 44 89.182 56 82.287 56 80.318 44 87.214" fill="#ebf0f9"/>
+  <polygon points="44 83.75 56 76.855 56 74.886 44 81.782 44 83.75" fill="#ebf0f9"/>
+  <polygon points="56 71.423 56 69.455 44 76.35 44 78.318 56 71.423" fill="#ebf0f9"/>
+  <path d="M79,96.285L60.057,85.045,60.031,64.077,77.367,74.33A3.369,3.369,0,0,1,79,77.255v19.03Z" fill="#ebf0f9"/>
+  <path d="M96.5,62.009l-15-8.66a4.985,4.985,0,0,0-1.953-.632A4.979,4.979,0,0,0,80,50.66V33.339a5.015,5.015,0,0,0-2.5-4.33l-15-8.66a5.012,5.012,0,0,0-5,0l-15,8.66A5.014,5.014,0,0,0,40,33.34V50.66a4.979,4.979,0,0,0,.453,2.057,4.981,4.981,0,0,0-1.953.633l-15,8.66A5.015,5.015,0,0,0,21,66.34V83.66a5.015,5.015,0,0,0,2.5,4.33l15,8.66a5.018,5.018,0,0,0,5,0l15-8.66A4.985,4.985,0,0,0,60,86.651a4.992,4.992,0,0,0,1.5,1.339l15,8.66a5.019,5.019,0,0,0,5,0l15-8.66A5.016,5.016,0,0,0,99,83.66V66.339A5.016,5.016,0,0,0,96.5,62.009ZM42,33.34a3.007,3.007,0,0,1,1.5-2.6l15-8.661a3.007,3.007,0,0,1,3,0l15,8.66a3.009,3.009,0,0,1,1.5,2.6V50.66a3.009,3.009,0,0,1-1.5,2.6l-15,8.66a3.013,3.013,0,0,1-3,0l-15-8.66a3.007,3.007,0,0,1-1.5-2.6V33.34ZM57.5,86.258l-15,8.66a3.016,3.016,0,0,1-3,0l-15-8.66a3.008,3.008,0,0,1-1.5-2.6V66.34a3.008,3.008,0,0,1,1.5-2.6l15-8.661a3.007,3.007,0,0,1,3,0l15,8.66a3.008,3.008,0,0,1,1.5,2.6h0V83.66A3.008,3.008,0,0,1,57.5,86.258ZM97,83.66a3.01,3.01,0,0,1-1.5,2.6l-15,8.66a3.013,3.013,0,0,1-3,0l-15-8.66a3.01,3.01,0,0,1-1.5-2.6V66.34a3.01,3.01,0,0,1,1.5-2.6l15-8.661a3.008,3.008,0,0,1,3,0l15,8.66a3.01,3.01,0,0,1,1.5,2.6V83.66Z" fill="#728dc0"/>
+  <polygon points="82 87.214 82 89.182 94 82.287 94 80.318 82 87.214" fill="#ebf0f9"/>
+  <polygon points="82 83.75 94 76.855 94 74.886 82 81.782 82 83.75" fill="#ebf0f9"/>
+  <polygon points="94 71.423 94 69.455 82 76.35 82 78.318 94 71.423" fill="#ebf0f9"/>
+</svg>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">企业专线</h4>
+                      高性能路由智能分流
+                    </div>
+                  </a>
+                </div>
+				
+				
+				
+                      <div class="media">
+                        <a href="game.html">
+                        <div class="media-left">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <title>未标题-3</title>
+  <path d="M98.374,25.73S78.381,20.267,59.267,39.381A59.983,59.983,0,0,0,48.624,53.422a26,26,0,0,0-21.536,6.826A38.225,38.225,0,0,1,44.78,65.342c-0.162,1.957-.362,5.528,2.309,6.77,2.057,0,1.457-6.071,3.52-9.632C68.911,30.9,87.795,29.426,96.99,29.868,100.421,30.033,98.374,25.73,98.374,25.73Z" fill="#ebf0f9"/>
+  <path d="M63.89,98.05a0.978,0.978,0,0,1-.352-0.064,1,1,0,0,1-.647-0.9,37.365,37.365,0,0,0-4.672-16.718,17.576,17.576,0,0,1-5.133-.443,1,1,0,0,1-.619-0.445,24.454,24.454,0,0,0-7.846-7.845,1,1,0,0,1-.446-0.618,17.525,17.525,0,0,1-.443-5.119,37.368,37.368,0,0,0-16.682-4.651,1,1,0,0,1-.649-1.727A26.845,26.845,0,0,1,48.08,52.342,60.921,60.921,0,0,1,58.567,38.667C68.63,28.6,78.959,25.352,85.851,24.4a34.584,34.584,0,0,1,12.787.368,1,1,0,0,1,.7.7c0.056,0.206,5.393,20.777-13.909,40.078A60.858,60.858,0,0,1,71.79,76.007a26.85,26.85,0,0,1-7.173,21.729A1,1,0,0,1,63.89,98.05ZM58.774,78.321a1,1,0,0,1,.865.5,39.377,39.377,0,0,1,5.079,15.73,24.852,24.852,0,0,0,5-18.943,1,1,0,0,1,.509-1.021A58.889,58.889,0,0,0,84.008,64.138c9.649-9.65,12.777-19.5,13.7-26.06a35.005,35.005,0,0,0-.174-11.513,35.036,35.036,0,0,0-11.512-.173c-6.563.926-16.41,4.054-26.052,13.7A58.965,58.965,0,0,0,49.5,53.9a1,1,0,0,1-1.019.509,24.86,24.86,0,0,0-18.895,5.007A39.393,39.393,0,0,1,45.28,64.476a1,1,0,0,1,.5.964,15.533,15.533,0,0,0,.259,4.723,26.487,26.487,0,0,1,7.907,7.906,15.6,15.6,0,0,0,4.735.258C58.708,78.323,58.742,78.321,58.774,78.321Z" fill="#728dc0"/>
+  <path d="M45.269,86.741c-2.183,2.183-11.706,3.833-11.706,3.833s1.617-9.556,3.8-11.739A5.59,5.59,0,0,1,45.269,86.741Z" fill="#ebf0f9"/>
+  <path d="M33.563,91.574a1,1,0,0,1-.986-1.167c0.171-1.01,1.738-9.938,4.079-12.279a6.59,6.59,0,0,1,9.32,9.32h0c-2.34,2.339-11.236,3.937-12.242,4.111A1.014,1.014,0,0,1,33.563,91.574ZM41.316,78.2a4.561,4.561,0,0,0-3.246,1.345c-1.251,1.251-2.552,6.178-3.26,9.78,3.591-.721,8.5-2.038,9.752-3.288A4.591,4.591,0,0,0,41.316,78.2Zm3.953,8.544h0Z" fill="#728dc0"/>
+  <path d="M86.909,43.968a1,1,0,0,1-1-1.106,4.328,4.328,0,0,0,0-.914,4.245,4.245,0,0,0-4.667-3.753,1,1,0,1,1-.215-1.988,6.234,6.234,0,0,1,6.87,6.868A1,1,0,0,1,86.909,43.968Z" fill="#728dc0"/>
+  <path d="M100,87.707a4.122,4.122,0,1,1,2.914-1.208A4.1,4.1,0,0,1,100,87.707Zm0-6.241a2.12,2.12,0,0,0-1.5,3.619,2.17,2.17,0,0,0,3,0A2.12,2.12,0,0,0,100,81.466Z" fill="#728dc0"/>
+  <path d="M56,20c0-.468-1.294-0.859-3.033-0.967C52.859,17.294,52.468,16,52,16s-0.859,1.294-.967,3.033C49.294,19.141,48,19.532,48,20s1.294,0.859,3.033.967C51.141,22.706,51.532,24,52,24s0.859-1.294.967-3.033C54.706,20.859,56,20.468,56,20Z" fill="#728dc0"/>
+  <path d="M22.486,34.515a1,1,0,0,1-.707-0.293l-2.757-2.757a1,1,0,0,1,0-1.414l2.757-2.757a1,1,0,0,1,1.414,0L25.95,30.05a1,1,0,0,1,0,1.414l-2.757,2.757A1,1,0,0,1,22.486,34.515Zm-1.343-3.757L22.486,32.1l1.343-1.343-1.343-1.343Z" fill="#728dc0"/>
+  <path d="M16,89a1,1,0,0,1-.707-1.707l5-5a1,1,0,0,1,1.414,1.414l-5,5A1,1,0,0,1,16,89Z" fill="#728dc0"/>
+  <path d="M43.5,109a1,1,0,0,1-.707-1.707l6.5-6.5a1,1,0,0,1,1.414,1.414l-6.5,6.5A1,1,0,0,1,43.5,109Z" fill="#728dc0"/>
+  <path d="M24,109a1,1,0,0,1-.707-1.707l3.75-3.75a1,1,0,0,1,1.414,1.414l-3.75,3.75A1,1,0,0,1,24,109Z" fill="#728dc0"/>
+  <path d="M30.625,102.375a1,1,0,0,1-.707-1.707l0.75-.75a1,1,0,0,1,1.414,1.414l-0.75.75A1,1,0,0,1,30.625,102.375Z" fill="#728dc0"/>
+</svg></div>
+                    <div class="media-body">
+                      <h4 class="media-heading">游戏加速</h4>
+                      CN2优质线路
+                    </div>
+                  </a>
+              </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+		
+        <li>
+		<a href="pricing.html">定价</a></li>
+              <li><a href="faq.html">教程</a></li>
+                <li><a href="terms.html">条款</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" role="button"
+             aria-haspopup="true">更多 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="https://www.lengjiao.org/announcements.php">公告信息</a></li>
+                                                                   
+            <li><a href="https://www.lengjiao.org/submitticket.php">提交问题</a></li>
+            
+            <li><a href="team.html">关于我们</a></li>
+          
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <section class="section-center header">
+    <div class="background-video-wrapper">
+      <div id="stage-three" class="header-gradient-bg"></div>
+    </div>
+    <div class="section-inner">
+      <div class="container">
+        <div class="cover-heading">棱角 云服务</div>
+        <div class="cover-description">构建属于您的私人国际网络加速服务</div>
+        <div class="cover-action">
+          <a id="action-reg" href="https://www.lengjiao.org/cart.php" class="btn btn-ghost-light">订购服务</a>
+          <a id="action-auth" href="https://dashboard.daocloud.io/" class="hidden btn btn-ghost-light">进入控制台</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-center lifecycle">
+    <div class="section-inner">
+      <div class="container">
+            
+                  <h2 class="section-heading">以稳固为中心的云加速模式</h2>
+          <p class="section-sub-heading">致诚服务于不同客户需求</p>
+          <div class="row">
+                      
+            
+                          <div class="card col-xs-12 col-sm-2">
+            <div class="clearfix">
+              <div class="col-xs-4 col-sm-12">
+                <span class="card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>home-lifecycle-01</title>
+  <path d="M22,23.009H7l-1-1v-15l1-1H22l1,1v15Zm-14-2H21v-13H8v13Z"/>
+  <path d="M22,42.009H7l-1-1v-15l1-1H22l1,1v15Zm-14-2H21v-13H8v13Z"/>
+  <path d="M41.052,42h-15l-1-1V7l1-1h15l1,1V41Zm-14-2h13V8h-13V40Z"/>
+</svg>
+                </span>
+              </div>
+              <div class="col-xs-8 col-sm-12">
+                <h4 class="card-title">轻服务</h4>
+                <p class="card-text">一个订阅地址满足全平台不同需求</p>
+              </div>
+            </div>
+          </div>
+              
+            
+                          <div class="card col-xs-12 col-sm-2">
+            <div class="clearfix">
+              <div class="col-xs-4 col-sm-12">
+                <span class="card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>home-lifecycle-02</title>
+  <path d="M24.5,29A12.5,12.5,0,1,1,37,16.5,12.514,12.514,0,0,1,24.5,29Zm0-23A10.5,10.5,0,1,0,35,16.5,10.512,10.512,0,0,0,24.5,6Z"/>
+  <path d="M15.5,44A12.5,12.5,0,1,1,28,31.5,12.514,12.514,0,0,1,15.5,44Zm0-23A10.5,10.5,0,1,0,26,31.5,10.512,10.512,0,0,0,15.5,21Z"/>
+  <path d="M32.5,44A12.5,12.5,0,1,1,45,31.5,12.514,12.514,0,0,1,32.5,44Zm0-23A10.5,10.5,0,1,0,43,31.5,10.511,10.511,0,0,0,32.5,21Z"/>
+</svg>
+                </span>
+              </div>
+              <div class="col-xs-8 col-sm-12">
+                <h4 class="card-title">低耗高效</h4>
+                <p class="card-text">用最小化的代价帮助企业互联网业务进入高效的协作模式</p>
+              </div>
+            </div>
+          </div>
+              
+            
+                          <div class="card col-xs-12 col-sm-2">
+            <div class="clearfix">
+              <div class="col-xs-4 col-sm-12">
+                <span class="card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>home-lifecycle-03</title>
+  <path d="M24,31A14,14,0,1,1,38,17,14.016,14.016,0,0,1,24,31ZM24,5A12,12,0,1,0,36,17,12.014,12.014,0,0,0,24,5Z"/>
+  <path d="M31,36H17V27.371l1.426,0.67a11.234,11.234,0,0,0,5.327,1.06l0.046,0,0.046,0a11.156,11.156,0,0,0,5.694-1.262L31,27.077V36ZM19,34H29V30.265a13.147,13.147,0,0,1-5.2.836,13.165,13.165,0,0,1-4.8-.678V34Z"/>
+  <rect x="17" y="37" width="14" height="2"/>
+  <rect x="18" y="40" width="12" height="2"/>
+  <rect x="19" y="43" width="10" height="2"/>
+</svg>
+                </span>
+              </div>
+              <div class="col-xs-8 col-sm-12">
+                <h4 class="card-title">持续创新</h4>
+                <p class="card-text">获得持续迭代的创新能力和永久可用的业务连续性</p>
+              </div>
+            </div>
+          </div>
+              
+            
+                          <div class="card col-xs-12 col-sm-2">
+            <div class="clearfix">
+              <div class="col-xs-4 col-sm-12">
+                <span class="card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>home-lifecycle-04</title>
+  <path d="M23.977,42.007A18.18,18.18,0,0,1,6.159,27.185l1.966-.369a16.167,16.167,0,0,0,31.24,2.094l1.9,0.627a18.169,18.169,0,0,1-13.9,12.153A18.377,18.377,0,0,1,23.977,42.007Z"/>
+  <polygon points="42.59 33.914 40.146 29.787 36.02 32.235 36.733 29.445 40.858 27 43.303 31.125 42.59 33.914"/>
+  <path d="M39.876,21.185a16.167,16.167,0,0,0-31.24-2.093l-1.9-.628a18.167,18.167,0,0,1,35.1,2.352Z"/>
+  <polygon points="11.98 15.766 7.855 18.213 5.41 14.086 4.697 16.875 7.142 21 11.267 18.555 11.98 15.766"/>
+</svg>
+                </span>
+              </div>
+              <div class="col-xs-8 col-sm-12">
+                <h4 class="card-title">高能运维</h4>
+                <p class="card-text">自动警报系统将可第一时间解决故障</p>
+              </div>
+            </div>
+          </div>
+              
+            
+                          <div class="card col-xs-12 col-sm-2">
+            <div class="clearfix">
+              <div class="col-xs-4 col-sm-12">
+                <span class="card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>home-lifecycle-05</title>
+  <rect x="9.304" y="27" width="2" height="16"/>
+  <rect x="23.304" y="30" width="2" height="13"/>
+  <rect x="37.304" y="21" width="2" height="22"/>
+  <g>
+    <path d="M23.83,23.88l-12.4-6.675L4.955,22.759a1,1,0,1,1-1.3-1.519l7-6,1.125-.121L24.18,21.8,40.911,7.707A1,1,0,0,1,42.2,9.237L24.948,23.765Z"/>
+    <polygon points="40.692 13.632 41.103 8.853 36.324 8.445 38.527 6.59 43.304 7 42.895 11.778 40.692 13.632"/>
+  </g>
+</svg>
+                </span>
+              </div>
+              <div class="col-xs-8 col-sm-12">
+                <h4 class="card-title">数据驱动</h4>
+                <p class="card-text">即时的用户反馈和精准的用户画像，让数据驱动产品改善</p>
+              </div>
+            </div>
+          </div>
+              
+              </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-center workflow">
+    <div class="section-inner">
+        
+              <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-push-6 v-align">
+            <div class="centered">
+              <div class="centered-inner">
+                <span class="section-half-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330">
+  <title>home-img-06</title>
+  <g>
+    <rect width="8" height="8" fill="#f2f2f2" opacity="0.01" style="isolation: isolate"/>
+    <rect x="552" y="322" width="8" height="8" fill="#f2f2f2" opacity="0.01" style="isolation: isolate"/>
+    <rect y="322" width="8" height="8" fill="#f2f2f2" opacity="0.01" style="isolation: isolate"/>
+    <rect x="552" width="8" height="8" fill="#f2f2f2" opacity="0.01" style="isolation: isolate"/>
+  </g>
+  <path d="M221.992,119.627l48.21,48.21,20.981-20.981L225.86,81.533c22.872-22.872,51.1-19.282,51.1-19.282l6.749-6.749c-8.224-8.224-49.952-17.536-76.406,8.918L186.76,84.96a17.015,17.015,0,0,1-21.768,21.768l-20.118,20.118L179.1,162.519l21.563-21.563a17.062,17.062,0,0,1,16.3-22.09,30.841,30.841,0,0,1,5.032.762h0Z" fill="#f4f4f4"/>
+  <path d="M343.823,186.862l68.64,68.64a21.27,21.27,0,0,1,0,30.077l-3.582,3.582a21.27,21.27,0,0,1-30.08,0l-68.638-68.638h0l33.662-33.662h0Z" fill="#f4f4f4"/>
+  <path d="M203.992,118.627l48.21,48.21,20.981-20.981L207.86,80.533c22.872-22.872,51.1-19.282,51.1-19.282l6.749-6.749c-8.224-8.224-49.952-17.536-76.406,8.918L168.76,83.96a17.015,17.015,0,0,1-21.768,21.768l-20.118,20.118L161.1,161.519l21.563-21.563a17.062,17.062,0,0,1,16.3-22.09,30.841,30.841,0,0,1,5.032.762h0Z" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M426.069,88.991L406.81,108.25a23.456,23.456,0,0,1-33.075,0h0a23.456,23.456,0,0,1,0-33.075L389.607,59.3l2.865-2.865a46.948,46.948,0,0,0-57.311,55.943L189.684,257.858a24.41,24.41,0,1,0,34.368,34.4L368.94,147.367A46.955,46.955,0,0,0,426.069,88.991Z" fill="#91d6e8" opacity="0.8" style="isolation: isolate"/>
+  <circle cx="197.41" cy="267.689" r="9.529" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M418.151,80.084L398.892,99.343a23.456,23.456,0,0,1-33.075,0h0a23.456,23.456,0,0,1,0-33.075L381.689,50.4l2.865-2.865a46.948,46.948,0,0,0-57.311,55.943L181.767,248.951a24.41,24.41,0,1,0,34.368,34.4L361.023,138.46A46.955,46.955,0,0,0,418.151,80.084Z" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M325.823,185.862l68.64,68.64a21.27,21.27,0,0,1,0,30.077l-3.582,3.582a21.27,21.27,0,0,1-30.08,0l-68.638-68.638h0l33.662-33.662h0Z" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <rect x="103" y="26" width="20" height="20" fill="none" stroke="#91d6e8" stroke-miterlimit="10" stroke-width="4"/>
+  <rect x="14" y="143" width="50" height="50" fill="#f4f4f4"/>
+  <rect x="480" y="239" width="23" height="23" fill="none" stroke="#f4f4f4" stroke-linejoin="round" stroke-width="4"/>
+  <polygon points="534 170 511 170 522.5 151 534 170" fill="none" stroke="#91d6e8" stroke-miterlimit="10" stroke-width="4"/>
+  <circle cx="473.5" cy="93.5" r="11.5" fill="none" stroke="#f4f4f4" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="112" cy="244" r="7" fill="none" stroke="#7ee279" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <line x1="347.775" y1="104.226" x2="338.812" y2="113.19" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <line x1="354.851" y1="111.302" x2="345.888" y2="120.266" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <line x1="361.957" y1="118.408" x2="352.994" y2="127.371" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+</svg>
+</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-sm-pull-6 v-align">
+            <div class="context text-left">
+              <h3>急速配置</h3>
+              <p>一个订阅地址，持续更新节点，可在Win，Mac，Linux，Ios，Android全平台应用</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        
+              <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6  v-align">
+            <div class="centered">
+              <div class="centered-inner">
+                <span class="section-half-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330">
+  <title>home-img-07</title>
+  <g>
+    <rect width="8" height="8" fill="#f2f2f2" opacity="0.01" style="isolation: isolate"/>
+    <rect x="552" y="322" width="8" height="8" fill="#f2f2f2" opacity="0.01" style="isolation: isolate"/>
+    <rect y="322" width="8" height="8" fill="#f2f2f2" opacity="0.01" style="isolation: isolate"/>
+    <rect x="552" width="8" height="8" fill="#f2f2f2" opacity="0.01" style="isolation: isolate"/>
+  </g>
+  <path d="M373.379,104.009c-2.044,2.509-17.316,3.112-28.275-5.817s-18.142-18.254-11.411-26.516,18.028-3.92,28.275,5.817C372.134,87.151,375.423,101.5,373.379,104.009Z" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M374.533,104.009c2.044,2.509,17.316,3.112,28.275-5.817s18.142-18.254,11.411-26.516-18.028-3.92-28.275,5.817C375.779,87.151,372.489,101.5,374.533,104.009Z" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <line x1="117.128" y1="61.429" x2="128.521" y2="69.925" fill="none" stroke="#f4f4f4" stroke-linejoin="round" stroke-width="4"/>
+  <line x1="108.545" y1="89.882" x2="121.872" y2="90.409" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <rect x="42.313" y="72.464" width="19.831" height="19.831" transform="translate(-42.954 61.059) rotate(-45)" fill="none" stroke="#f4f4f4" stroke-linejoin="round" stroke-width="4"/>
+  <line x1="78" y1="41.442" x2="88" y2="41.442" fill="none" stroke="#7ee279" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <line x1="83" y1="36.248" x2="83" y2="46.442" fill="none" stroke="#7ee279" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M107.6,230.51H464.24a28.966,28.966,0,0,1,28.966,28.966h0a28.966,28.966,0,0,1-28.966,28.966H107.6a28.966,28.966,0,0,1-28.966-28.966h0A28.966,28.966,0,0,1,107.6,230.51Z" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <polygon points="267.557 137.607 198.765 105.607 225.557 105.607 267.557 124.607 267.557 137.607" fill="#f4f4f4"/>
+  <rect x="138" y="106.442" width="128" height="113" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <rect x="310" y="106.442" width="128" height="113" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <polyline points="335.084 275.442 245.946 275.442 249.671 270.442" fill="none" stroke="#f4f4f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <polyline points="245.946 243.477 335.084 243.477 331.358 248.442" fill="none" stroke="#f4f4f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="121.5" cy="266.166" r="15.5" fill="#7ee279"/>
+  <circle cx="466.5" cy="266.166" r="15.5" fill="#7ee279"/>
+  <circle cx="112.545" cy="260.166" r="15.684" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="458.316" cy="260.166" r="15.684" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <rect x="312" y="140.988" width="124" height="11.455" fill="#f4f4f4"/>
+  <polygon points="442.917 139.442 303.917 139.442 303.917 105.442 373.417 105.442 442.917 105.442 442.917 139.442" fill="#fff" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <line x1="374" y1="219.442" x2="374" y2="105.726" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <rect x="203.126" y="12.892" width="33.587" height="138.778" transform="translate(53.214 247.642) rotate(-65.281)" fill="#fff" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+</svg>
+</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6  v-align">
+            <div class="context text-left">
+              <h3>满意交付</h3>
+              <p>客户满意是我们的服务宗旨，不满意可以随时退换产品</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        
+              <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-push-6 v-align">
+            <div class="centered">
+              <div class="centered-inner">
+                <span class="section-half-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 330">
+  <defs>
+    <linearGradient id="a" x1="8" y1="292.462" x2="552" y2="292.462" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#91d6e8" stop-opacity="0"/>
+      <stop offset="0.034" stop-color="#91d6e8" stop-opacity="0.198"/>
+      <stop offset="0.072" stop-color="#91d6e8" stop-opacity="0.385"/>
+      <stop offset="0.114" stop-color="#91d6e8" stop-opacity="0.551"/>
+      <stop offset="0.157" stop-color="#91d6e8" stop-opacity="0.69"/>
+      <stop offset="0.204" stop-color="#91d6e8" stop-opacity="0.804"/>
+      <stop offset="0.255" stop-color="#91d6e8" stop-opacity="0.891"/>
+      <stop offset="0.313" stop-color="#91d6e8" stop-opacity="0.953"/>
+      <stop offset="0.383" stop-color="#91d6e8" stop-opacity="0.989"/>
+      <stop offset="0.5" stop-color="#91d6e8"/>
+      <stop offset="0.617" stop-color="#92d6e8" stop-opacity="0.989"/>
+      <stop offset="0.687" stop-color="#96d8e9" stop-opacity="0.953"/>
+      <stop offset="0.745" stop-color="#9ddaeb" stop-opacity="0.891"/>
+      <stop offset="0.796" stop-color="#a7deed" stop-opacity="0.804"/>
+      <stop offset="0.843" stop-color="#b3e3ef" stop-opacity="0.69"/>
+      <stop offset="0.886" stop-color="#c2e8f2" stop-opacity="0.551"/>
+      <stop offset="0.928" stop-color="#d5eff6" stop-opacity="0.385"/>
+      <stop offset="0.966" stop-color="#e9f7fa" stop-opacity="0.198"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <title>home-img</title>
+  <g>
+    <rect width="8" height="8" fill="#f2f2f2" opacity="0.01"/>
+    <rect x="552" y="322" width="8" height="8" fill="#f2f2f2" opacity="0.01"/>
+    <rect y="322" width="8" height="8" fill="#f2f2f2" opacity="0.01"/>
+    <rect x="552" width="8" height="8" fill="#f2f2f2" opacity="0.01"/>
+  </g>
+  <g opacity="0.4">
+    <rect x="54" y="62.462" width="200" height="181" rx="8" ry="8" fill="#fff" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <line x1="54" y1="125.462" x2="254" y2="125.462" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <line x1="54" y1="186.462" x2="254" y2="186.462" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="229.594" cy="95.777" r="5.446" fill="#91d6e8"/>
+    <circle cx="226" cy="93.462" r="5" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <g>
+      <line x1="190" y1="105.462" x2="190" y2="84.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="162" y1="105.462" x2="162" y2="84.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="134" y1="105.462" x2="134" y2="84.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="106" y1="105.462" x2="106" y2="84.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="78" y1="105.462" x2="78" y2="84.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="187" y1="104.462" x2="187" y2="83.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="159" y1="104.462" x2="159" y2="83.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="131" y1="104.462" x2="131" y2="83.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="103" y1="104.462" x2="103" y2="83.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="75" y1="104.462" x2="75" y2="83.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="190" y1="167.462" x2="190" y2="146.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="162" y1="167.462" x2="162" y2="146.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="134" y1="167.462" x2="134" y2="146.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="106" y1="167.462" x2="106" y2="146.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="78" y1="167.462" x2="78" y2="146.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="187" y1="166.462" x2="187" y2="145.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="159" y1="166.462" x2="159" y2="145.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="131" y1="166.462" x2="131" y2="145.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="103" y1="166.462" x2="103" y2="145.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="75" y1="166.462" x2="75" y2="145.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="190" y1="226.462" x2="190" y2="205.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="162" y1="226.462" x2="162" y2="205.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="134" y1="226.462" x2="134" y2="205.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="106" y1="226.462" x2="106" y2="205.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="78" y1="226.462" x2="78" y2="205.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="187" y1="225.462" x2="187" y2="204.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="159" y1="225.462" x2="159" y2="204.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="131" y1="225.462" x2="131" y2="204.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="103" y1="225.462" x2="103" y2="204.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="75" y1="225.462" x2="75" y2="204.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+    <circle cx="229.5" cy="157.962" r="5.5" fill="#91d6e8"/>
+    <circle cx="226" cy="155.462" r="5" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="229.594" cy="218.099" r="5.5" fill="#91d6e8"/>
+    <circle cx="226" cy="216.462" r="5" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  </g>
+  <g opacity="0.4">
+    <rect x="316" y="62.462" width="200" height="181" rx="8" ry="8" fill="#fff" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <line x1="316" y1="125.462" x2="516" y2="125.462" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <line x1="316" y1="186.462" x2="516" y2="186.462" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="491.594" cy="95.777" r="5.446" fill="#91d6e8"/>
+    <circle cx="488" cy="93.462" r="5" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <g>
+      <line x1="452" y1="105.462" x2="452" y2="84.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="424" y1="105.462" x2="424" y2="84.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="396" y1="105.462" x2="396" y2="84.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="368" y1="105.462" x2="368" y2="84.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="340" y1="105.462" x2="340" y2="84.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="449" y1="104.462" x2="449" y2="83.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="421" y1="104.462" x2="421" y2="83.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="393" y1="104.462" x2="393" y2="83.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="365" y1="104.462" x2="365" y2="83.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="337" y1="104.462" x2="337" y2="83.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="452" y1="167.462" x2="452" y2="146.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="424" y1="167.462" x2="424" y2="146.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="396" y1="167.462" x2="396" y2="146.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="368" y1="167.462" x2="368" y2="146.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="340" y1="167.462" x2="340" y2="146.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="449" y1="166.462" x2="449" y2="145.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="421" y1="166.462" x2="421" y2="145.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="393" y1="166.462" x2="393" y2="145.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="365" y1="166.462" x2="365" y2="145.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="337" y1="166.462" x2="337" y2="145.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="452" y1="226.462" x2="452" y2="205.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="424" y1="226.462" x2="424" y2="205.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="396" y1="226.462" x2="396" y2="205.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="368" y1="226.462" x2="368" y2="205.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="340" y1="226.462" x2="340" y2="205.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="449" y1="225.462" x2="449" y2="204.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="421" y1="225.462" x2="421" y2="204.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="393" y1="225.462" x2="393" y2="204.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="365" y1="225.462" x2="365" y2="204.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="337" y1="225.462" x2="337" y2="204.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+    <circle cx="491.5" cy="157.962" r="5.5" fill="#91d6e8"/>
+    <circle cx="488" cy="155.462" r="5" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="491.594" cy="218.099" r="5.5" fill="#91d6e8"/>
+    <circle cx="488" cy="216.462" r="5" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  </g>
+  <g>
+    <rect x="153" y="27.462" width="254" height="230" rx="8" ry="8" fill="#fff" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <line x1="153" y1="107.462" x2="407" y2="107.462" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <line x1="153" y1="185.462" x2="407" y2="185.462" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="377" cy="70.462" r="7" fill="#91d6e8"/>
+    <circle cx="371.5" cy="68.962" r="6.5" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <g>
+      <line x1="297" y1="84.462" x2="297" y2="57.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="269" y1="84.462" x2="269" y2="57.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="241" y1="84.462" x2="241" y2="57.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="213" y1="84.462" x2="213" y2="57.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="185" y1="84.462" x2="185" y2="57.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+    </g>
+    <g>
+      <line x1="292" y1="83.093" x2="292" y2="56.093" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="264" y1="83.093" x2="264" y2="56.093" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="236" y1="83.093" x2="236" y2="56.093" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="208" y1="83.093" x2="208" y2="56.093" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="180" y1="83.093" x2="180" y2="56.093" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="297" y1="162.462" x2="297" y2="135.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="269" y1="162.462" x2="269" y2="135.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="241" y1="162.462" x2="241" y2="135.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="213" y1="162.462" x2="213" y2="135.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="185" y1="162.462" x2="185" y2="135.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+    </g>
+    <g>
+      <line x1="292" y1="160.818" x2="292" y2="133.818" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="264" y1="160.818" x2="264" y2="133.818" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="236" y1="160.818" x2="236" y2="133.818" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="208" y1="160.818" x2="208" y2="133.818" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="180" y1="160.818" x2="180" y2="133.818" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+    <g>
+      <line x1="297" y1="238.462" x2="297" y2="211.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="269" y1="238.462" x2="269" y2="211.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="241" y1="238.462" x2="241" y2="211.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="213" y1="238.462" x2="213" y2="211.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="185" y1="238.462" x2="185" y2="211.462" fill="none" stroke="#91d6e8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+    </g>
+    <g>
+      <line x1="292" y1="236.462" x2="292" y2="209.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="264" y1="236.462" x2="264" y2="209.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="236" y1="236.462" x2="236" y2="209.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="208" y1="236.462" x2="208" y2="209.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      <line x1="180" y1="236.462" x2="180" y2="209.462" fill="none" stroke="#414751" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    </g>
+    <circle cx="377" cy="150.462" r="7" fill="#91d6e8"/>
+    <circle cx="371.5" cy="147.962" r="6.5" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="377" cy="226.462" r="7" fill="#91d6e8"/>
+    <circle cx="371.5" cy="221.962" r="6.5" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  </g>
+  <g>
+    <line x1="8" y1="292.462" x2="552" y2="292.462" fill="none" stroke-miterlimit="10" stroke-width="4" stroke="url(#a)"/>
+    <line x1="280" y1="287.462" x2="280" y2="258.787" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="2"/>
+    <line x1="145" y1="286.314" x2="145" y2="245.314" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="2"/>
+    <circle cx="280" cy="292.462" r="6" fill="#fff" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <line x1="424" y1="286.462" x2="424" y2="244.462" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="2"/>
+    <circle cx="424" cy="292.462" r="6" fill="#fff" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="145" cy="292.462" r="6" fill="#fff" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  </g>
+</svg>
+</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-sm-pull-6 v-align">
+            <div class="context text-left">
+              <h3>八大数据中心</h3>
+              <p>全球八大数据中心，平行架构，独享资源，可定制不同服务</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        
+              <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6  v-align">
+            <div class="centered">
+              <div class="centered-inner">
+                <span class="section-half-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330">
+  <title>home-img</title>
+  <polyline points="41.667 214.648 107.103 141.855 160.333 165.997 231.667 106.619 341.316 141.855 396.177 92.108 454.8 101.326 534.706 51.695" fill="none" stroke="#dfe6ed" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="334" cy="96.981" r="51" fill="#fff" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <rect x="133.5" y="151.981" width="51" height="140" rx="8" ry="8" fill="#89e082"/>
+  <rect x="127.5" y="143.981" width="51" height="142" rx="8" ry="8" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M260.064,225.994h81.605c6.975,0,16.042-9.4,16.042-20.211s-5.892-20.755-13.913-21.8c-6.726-.877-33.558-1.215-42.048-1-1.776.045-3.505,0.439-4.952-.592-12.1-8.618-30.183-27.539-79.628-27.539-11.326,0-25.233,3.925-32.851,6.391a8.167,8.167,0,0,0-5.656,7.774v81.97a8.169,8.169,0,0,0,3.964,7l19.7,11.827a8.169,8.169,0,0,0,4.205,1.165h114.4a46.877,46.877,0,0,0,30.85-11.582l76.2-66.6c8.16-7.132,9.859-19.416,3.446-28.153q-0.393-.536-0.829-1.073c-6.47-7.98-14.22-8.722-19.193-8.126a16.174,16.174,0,0,0-7.382,2.867L354.644,193.1" fill="#fff" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <text transform="translate(310.817 125.113)" font-size="80" fill="#414751" font-family="Avenir Next">S</text>
+  <line x1="334" y1="58.981" x2="334" y2="132.981" fill="none" stroke="#414751" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="42.742" cy="213.13" r="6" fill="#fff" stroke="#dfe6ed" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="107.6" cy="143.26" r="6" fill="#fff" stroke="#dfe6ed" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="232.609" cy="106.619" r="6" fill="#fff" stroke="#dfe6ed" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="396.543" cy="92.801" r="6" fill="#fff" stroke="#dfe6ed" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="454.706" cy="100.619" r="6" fill="#fff" stroke="#dfe6ed" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="533.924" cy="52.939" r="6" fill="#fff" stroke="#dfe6ed" stroke-linejoin="round" stroke-width="4"/>
+</svg>
+</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6  v-align">
+            <div class="context text-left">
+              <h3>创造客户价值</h3>
+              <p>让每一次沟通都产生价值，让客户的参与感驱动产品迭代，数据驱动的精益运营，塑造全新的极致体验</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        </div>
+  </section>
+
+  <section class="section-center products">
+    <div class="section-inner">
+      <div class="container">
+      
+                  <h2 class="section-heading">棱角 云服务产品</h2>
+          <p class="section-sub-heading">适合个人和企业不同应用场景</p>
+          <div class="row">
+                
+        
+      
+                
+                  <div class="col-xs-12 col-sm-4">
+            <a class="card-as-link" href="cloud.html">
+              <div class="card card-underline">
+                <img class="card-icon" src="svg/video.svg" alt="">
+                <div class="card-body">
+                  <h4 class="card-title">云加速</h4>
+                  <p class="card-description">通过海外高性能及大带宽服务器帮户用户请求数据，传输达到企业级加密</p>
+                </div>
+                <div class="card-footer">
+                  <a href="https://www.lengjiao.org/cart.php" class="btn btn-blue">立即订购</a>
+                </div>
+              </div>
+            </a>
+          </div>  
+        
+      
+                
+                  <div class="col-xs-12 col-sm-4">
+            <a class="card-as-link" href="dce.html">
+              <div class="card card-underline">               
+                <img class="card-icon" src="svg/game.svg" alt="">
+                <div class="card-body">
+                  <h4 class="card-title">游戏加速</h4>
+                  <p class="card-description">国内CN2专线直连，为游戏客户带来风驰电掣般的体验</p>
+                </div>
+                <div class="card-footer">
+                  <a href="https://www.lengjiao.org/cart.php?gid=2" class="btn btn-blue">立即订购</a>
+                </div>
+              </div>
+            </a>
+          </div>  
+        
+      
+                
+                  <div class="col-xs-12 col-sm-4">
+            <a class="card-as-link" href="http://www.daovoice.io/">
+              <div class="card card-underline">
+                <img class="card-icon" src="svg/enterprise.svg" alt="">
+                <div class="card-body">
+                  <h4 class="card-title">企业专线</h4>
+                  <p class="card-description">新一代智能分流路由器，帮助企业进获得互联网技术驱动下的最大利益</p>
+                </div>
+                <div class="card-footer">
+                  <a href="https://www.lengjiao.org/submitticket.php" class="btn btn-blue">沟通咨询</a>
+                </div>
+              </div>
+            </a>
+          </div>  
+        
+      
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="footer">
+  <div class="container">
+    <div class="row">
+        
+              <div class="col-xs-12 col-sm-2">
+          <div class="list-header">
+            <a href="#footer-links-products1" data-toggle="collapse"
+               class="collapsed">产品</a>
+          </div>
+          <ul class="list-links collapse" id="footer-links-products1">
+                      <li><a target="_blank" href="cloud.html">云加速</a></li>
+                      <li><a target="_blank" href="game.html">游戏加速</a></li>
+                      <li><a target="_blank" href="inc.html">企业专线</a></li>
+                </ul>
+        </div>
+          
+        
+              <div class="col-xs-12 col-sm-2">
+          <div class="list-header">
+            <a href="#footer-links-products2" data-toggle="collapse"
+               class="collapsed">服务及支持</a>
+          </div>
+          <ul class="list-links collapse" id="footer-links-products2">
+                      <li><a target="_blank" href="faq.html">使用教程</a></li>
+                      <li><a target="_blank" href="https://www.lengjiao.org/announcements.php">公告信息</a></li>
+                      <li><a target="_blank" href="https://www.lengjiao.org/submitticket.php">提交问题</a></li>
+                </ul>
+        </div>
+          
+        
+              <div class="col-xs-12 col-sm-2">
+          <div class="list-header">
+            <a href="#footer-links-products3" data-toggle="collapse"
+               class="collapsed">付款方式</a>
+          </div>
+          <ul class="list-links collapse" id="footer-links-products3">
+                      
+          <li><a href="https://www.alipay.com/"><img class="card-icon" src="svg/alipay.svg" alt=""></a>                      
+		  <li><a href="https://pay.weixin.qq.com"><img class="card-icon" src="svg/wepay.svg" alt=""></a>
+		  <li><a href="#"><img class="card-icon" src="svg/qkl.svg" alt=""></a>
+		  
+
+                </ul>
+        </div>
+          
+        
+              <div class="col-xs-12 col-sm-2">
+          <div class="list-header">
+            <a href="#footer-links-products4" data-toggle="collapse"
+               class="collapsed">棱角</a>
+          </div>
+          <ul class="list-links collapse" id="footer-links-products4">
+                      <li><a target="_blank" href="team.html">团队</a></li>
+                      <li><a target="_blank" href="terms.html">条款</a></li>
+                      <li><a target="_blank" href="partners.html">合作</a></li>
+                </ul>
+        </div>
+          
+    
+      <div class="col-xs-12 col-sm-4">
+        <div class="mailing-list-form">
+          <form 
+          class="validate" target="_blank" novalidate>
+            <div class="list-header">加入Telegram获取更多优惠</div>
+            <div class="input-group"><span class="input-group-btn">
+           
+            </span>
+            </div>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_68dc27c820189c135aa385c92_22be61cd23" tabindex="-1"
+                     value="">
+            </div>
+          </form>
+        </div>
+        <div class="social-media">
+          <div class="social-media-column">
+                  <a class="social-media-link social-media-facebook"  href="https://t.me/LengJiao">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+                  <title>social_Telegram</title>
+  <path d="M22.05 1.577c-.393-.016-.784.08-1.117.235-.484.186-4.92 1.902-9.41 3.64-2.26.873-4.518 1.746-6.256 2.415-1.737.67-3.045 1.168-3.114 1.192-.46.16-1.082.362-1.61.984-.133.155-.267.354-.335.628s-.038.622.095.895c.265.547.714.773 1.244.976 1.76.564 3.58 1.102 5.087 1.608.556 1.96 1.09 3.927 1.618 5.89.174.394.553.54.944.544l-.002.02s.307.03.606-.042c.3-.07.677-.244 1.02-.565.377-.354 1.4-1.36 1.98-1.928l4.37 3.226.035.02s.484.34 1.192.388c.354.024.82-.044 1.22-.337.403-.294.67-.767.795-1.307.374-1.63 2.853-13.427 3.276-15.38l-.012.046c.296-1.1.187-2.108-.496-2.705-.342-.297-.736-.427-1.13-.444zm-.118 1.874c.027.025.025.025.002.027-.007-.002.08.118-.09.755l-.007.024-.005.022c-.432 1.997-2.936 13.9-3.27 15.356-.046.196-.065.182-.054.17-.1-.015-.285-.094-.3-.1l-7.48-5.525c2.562-2.467 5.182-4.7 7.827-7.08.468-.235.39-.96-.17-.972-.594.14-1.095.567-1.64.84-3.132 1.858-6.332 3.492-9.43 5.406-1.59-.553-3.177-1.012-4.643-1.467 1.272-.51 2.283-.886 3.278-1.27 1.738-.67 3.996-1.54 6.256-2.415 4.522-1.748 9.07-3.51 9.465-3.662l.032-.013.03-.013c.11-.05.173-.055.202-.057 0 0-.01-.033-.002-.026zM10.02 16.016l1.234.912c-.532.52-1.035 1.01-1.398 1.36z" color="#000"/>
+</svg>
+            </a>
+        </div>
+                  <div class="social-media-column">
+            <a class="social-media-link social-media-twitter"  href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>social_Twitter</title>
+  <path d="M25.95,11.51l0.015,0.638a14,14,0,0,1-21.558,11.8,10.126,10.126,0,0,0,1.175.07A9.881,9.881,0,0,0,11.7,21.907a4.932,4.932,0,0,1-4.6-3.42A5.063,5.063,0,0,0,9.325,18.4a4.929,4.929,0,0,1-3.95-4.827V13.513a4.917,4.917,0,0,0,2.23.618A4.932,4.932,0,0,1,6.08,7.559,13.975,13.975,0,0,0,16.227,12.7a4.928,4.928,0,0,1,8.392-4.49,9.971,9.971,0,0,0,3.128-1.2,4.937,4.937,0,0,1-2.165,2.725A9.871,9.871,0,0,0,28.41,8.96,9.953,9.953,0,0,1,25.95,11.51Z"/>
+</svg>
+            </a>
+ 
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-center footer touch-links"></section>
+<section class="section-center footer alt hidden-xs">
+  <div class="container footer-copyright">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 hidden-xs text-right">
+        <ul class="list-inline">
+                  <li>
+                    <a href="#">
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <title>icon_mail</title>
+                    <path d="M29,8V24H3V8H29m0-2H3A2,2,0,0,0,1,8V24a2,2,0,0,0,2,2H29a2,2,0,0,0,2-2V8a2,2,0,0,0-2-2h0Z"/>
+                    <polyline points="3 8 16 18.5 29 8" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2"/>
+  </svg>
+  </span><span>Support@LengJiao.org</span>
+                    </a>
+                </li>
+              </ul>
+    </div>
+    </div>
+  </div>
+</section>
+</div>
+    </div>
+  </div>
+ 
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+(function(){ var widget_id = 'bHCBT1gmYe';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
+</body>
+  
+  
+</body>
+</html>
